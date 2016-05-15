@@ -31,7 +31,8 @@ namespace GamerShop
 
             bundles.Add(new StyleBundle("~/bundles/fonts").Include(
                       "~/Content/css/font-awesome.min.css"));
-                                  
+
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

@@ -144,7 +144,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/header.jpg');
+  background-image: url("/Content/img/header.jpg");
   text-align: center;
   color: white;
 }
