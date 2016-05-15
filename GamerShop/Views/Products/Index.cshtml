@@ -1,0 +1,52 @@
+﻿@model IEnumerable<GamerShop.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+            @Html.DisplayNameFor(model => model.Title)
+       
+            @Html.DisplayNameFor(model => model.Description)
+      
+            @Html.DisplayNameFor(model => model.ImgUrl)
+        
+            @Html.DisplayNameFor(model => model.Price)
+       
+            @Html.DisplayNameFor(model => model.StockCount)
+      
+<section class="no-padding" id="portfolio">
+    <div class="container-fluid">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-lg-4">
+                <a href="" class="portfolio-box">
+                    <!--img src="~/Content/img/products/1.jpg" class="img-responsive" alt="" /-->
+                    <img src="@Html.DisplayTextFor(modelItem => item.ImgUrl)" class="img-responsive" alt="" />
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </div>
+                            <div class="project-name">
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </div>
+                            @Html.DisplayFor(modelItem => item.Price)
+                            @Html.DisplayFor(modelItem => item.StockCount)
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</section>
+
+

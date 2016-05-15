@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "Content/mixins.css",
+    "inputFile": "Content/mixins.less"
+  },
+  {
+    "outputFile": "Content/home.css",
+    "inputFile": "Content/home.less"
+  },
+  {
+    "outputFile": "Content/css/home.css",
+    "inputFile": "Content/css/home.less"
+  }
+]
