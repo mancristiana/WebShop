@@ -23,13 +23,13 @@ namespace GamerShop
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/bundles/css").Include(
                       "~/Content/css/bootstrap.css",
                       "~/Content/css/home.css",
                       "~/Content/css/animate.min.css"
                       ));
 
-            bundles.Add(new StyleBundle("~/Content/fonts").Include(
+            bundles.Add(new StyleBundle("~/bundles/fonts").Include(
                       "~/Content/css/font-awesome.min.css"));
                                   
         }

@@ -4,8 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/fonts")
+    @Styles.Render("~/bundles/css")
+    @Styles.Render("~/bundles/fonts")
+    <link rel="shortcut icon" type="image/x-icon" href="~/shopping.ico" />
 
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' />
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' />
@@ -30,7 +31,7 @@
                     <li><a class="page-scroll" href="../#page-top">Home</a></li>
                     <li><a class="page-scroll" href="../#about">About</a></li>
                     <!--li>Html.ActionLink("Shop", "Index", "Products")</!--li -->
-                    <li><a class="page-scroll" href="../Index/#contact">Contact</a></li>
+                    <li><a class="page-scroll" href="../#contact">Contact</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
