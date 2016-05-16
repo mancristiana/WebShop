@@ -2,32 +2,28 @@
 @import "mixins.less";
 
 // Global Components
-html,
 body {
     height: 100%;
     width: 100%;
-}
-
-body {
     .serif-font;
+    background-color:@theme-light;
 }
 
 hr {
     border-color: @theme-primary;
     border-width: 3px;
     max-width: 50px;
-}
-
-hr.light {
-    border-color: white;
+    .light {
+    border-color: @theme-light;
+    }
 }
 
 a {
     .transition-all;
-    color: @theme-primary;
+    color: @theme-primary-lighter;
     &:hover,
     &:focus {
-        color: darken(@theme-primary, 10%);
+        color: darken(@theme-primary-lighter, 10%);
     }
 }
 
@@ -38,6 +34,21 @@ h4,
 h5,
 h6 {
     .sans-serif-font;
+}
+
+h2, h3 {
+    text-transform: uppercase;
+}
+
+h4 {
+    color: @theme-primary;
+    font-size: 250%;
+    font-weight: 700;
+    margin: 5% 0;
+}
+
+h5 {
+    color: @theme-less-dark;
 }
 
 p {
@@ -52,11 +63,11 @@ p {
 
 .bg-dark {
     background-color: @theme-dark;
-    color: white;
+    color: @theme-light;
 }
 
 .text-faded {
-    color: fade(white, 70%);
+    color: fade(@theme-light, 70%);
 }
 
 section {
@@ -74,7 +85,7 @@ aside {
 // Navigation
 
 .navbar-default {
-    background-color: white;
+    background-color: @theme-light;
     border-color: fade(@theme-dark, 5%);
     .sans-serif-font;
     .transition-all;
@@ -113,24 +124,24 @@ aside {
         }
     }
     @media (min-width: 768px) {
-        background-color: transparent;
-        border-color: fade(white, 30%);
+        background-color: @theme-primary;
+        border-color: fade(@theme-light, 30%);
         .navbar-header .navbar-brand {
-            color: fade(white, 70%);
+            color: fade(@theme-light, 70%);
             &:hover,
             &:focus {
-                color: white;
+                color: @theme-light;
             }
         }
         .nav > li > a,
         .nav > li > a:focus {
-            color: fade(white, 70%);
+            color: fade(@theme-light, 70%);
             &:hover {
-                color: white;
+                color: @theme-light;
             }
         }
         &.affix {
-            background-color: white;
+            background-color: @theme-light;
             border-color: fade(@theme-dark, 5%);
             .navbar-header .navbar-brand {
                 color: @theme-primary;
@@ -161,7 +172,7 @@ header {
     background-position: center;
     background-image: url(@img-header);
     text-align: center;
-    color: white;
+    color: @theme-light;
     .header-content {
         position: relative;
         text-align: center;
@@ -179,7 +190,7 @@ header {
             }
             p {
                 font-weight: 300;
-                color: fade(white, 70%);
+                color: fade(@theme-light, 70%);
                 font-size: 16px;
                 margin-bottom: 50px;
             }
@@ -232,7 +243,7 @@ header {
     max-width: 650px;
     margin: 0 auto;
     .portfolio-box-caption {
-        color: white;
+        color: @theme-light;
         opacity: 0;
         display: block;
         background: fade(@theme-primary, 90%);
@@ -300,53 +311,105 @@ header {
 
 // Button Styles
 .btn-default {
-    .button-variant(@theme-dark;white;white);
+    .button-variant(@theme-dark;@theme-light;@theme-light);
 }
 
 .btn-primary {
-    .button-variant(white;@theme-primary;@theme-primary);
+    .button-variant(@theme-light;@theme-primary;@theme-primary);
 }
 
 .btn {
     .sans-serif-font;
     border: none;
-    border-radius: 300px;
+    border-radius: 0;
     font-weight: 700;
     text-transform: uppercase;
 }
 
 .btn-xl {
     padding: 15px 30px;
+    margin: 10px;
 }
 
 // Extras
 // -- Highlight Color Customization
 ::-moz-selection {
-    color: white;
+    color: @theme-light;
     text-shadow: none;
     background: @theme-dark;
 }
 
 ::selection {
-    color: white;
+    color: @theme-light;
     text-shadow: none;
     background: @theme-dark;
 }
 
 img::selection {
-    color: white;
+    color: @theme-light;
     background: transparent;
 }
 
 img::-moz-selection {
-    color: white;
+    color: @theme-light;
     background: transparent;
 }
 
-body {
-    webkit-tap-highlight-color: @theme-dark;
+#page-wrap {
+    background-color: lighten(@theme-light, 50%);
+    margin: @size-nav auto @size-nav;
+    padding: 15px 15px;
+    @media (min-width:918px) {
+         width: 70%;
+    }
 }
 
 footer {
     clear: both;
+    background-color: @theme-less-dark;
+    color: @theme-light;
+    padding-bottom: 30px;
+    p#copy {
+        color: @theme-light;
+        background-color: @theme-dark;
+        margin: 3px auto 0;
+        padding: @size-wrap-padding @size-wrap-padding;
+    }
+}
+
+.product-section {
+    padding: 20px 0;
+    border-color: @theme-primary;
+    border-style: solid;
+    border-width: 1px 0;
+}
+
+.product-img {
+    margin-bottom: @size-wrap-padding;
+}
+
+input.quantity {
+    .sans-serif-font;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    width: 65px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    border:1px solid @theme-less-dark;
+    padding: 12px 3px 14px;
+    margin: 10px;
+    .transition-all();
+    outline: none; 
+    &:focus{
+    -moz-box-shadow: 0 0 8px @theme-primary;
+    -webkit-box-shadow: 0 0 8px @theme-primary;
+    box-shadow: 0 0 8px @theme-primary;
+    border: 1px solid @theme-primary;
+}
+
+
+
 }
