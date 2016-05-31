@@ -82,3 +82,5 @@ C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.pdb
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.Migrations.AddProductMigration.resources
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.csproj.GenerateResource.Cache
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\bin\Ninject.dll
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\bin\Ninject.xml

@@ -10,7 +10,7 @@ namespace GamerShop.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.isHome = true;
+            ViewBag.noContainer = true;
             return View();
         }
 

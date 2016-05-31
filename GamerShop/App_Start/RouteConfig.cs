@@ -11,9 +11,10 @@ namespace GamerShop
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            // Routes with ".axd" are resource specific and are handled differently
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}"); 
 
-            routes.MapRoute(
+            routes.MapRoute( // Named parameters for readability 
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

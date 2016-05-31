@@ -7,16 +7,24 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GamerShop.Models;
+using GamerShop.Repositories;
 
 namespace GamerShop.Controllers
 {
     public class ProductsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        ApplicationDbContext db = new ApplicationDbContext();
+        private IProductRepository repo;
+
+        //public ProductsController(IProductRepository repo)
+        //{
+       //     this.repo = repo; 
+       // }
 
         // GET: Products
         public ActionResult Index()
         {
+            ViewBag.noContainer = true;
             return View(db.Products.ToList());
         }
 

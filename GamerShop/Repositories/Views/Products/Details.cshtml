@@ -1,0 +1,40 @@
+﻿@model GamerShop.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="col-xs-12 col-md-8">
+        <img src="@Html.DisplayTextFor(model => model.ImgUrl)" class="img-responsive product-img" alt="" />
+        <div class="product-section">
+            <h3>Product information</h3>
+            <p>@Html.DisplayFor(model => model.Description)</p>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <h2>@Html.DisplayFor(model => model.Title)</h2>
+        <h5>Product id = @Html.DisplayFor(model => model.Id)</h5>
+        <h4>@Html.DisplayFor(model => model.Price)</h4>
+        <p>
+            <strong>Left in stock: </strong> @Html.DisplayFor(model => model.StockCount)
+            <br />
+
+            <input type="number" class="quantity text-center" value="1" min="1" max="@Html.DisplayTextFor(model => model.StockCount)">
+           
+            <a href="#" class="btn btn-primary btn-xl page-scroll">Add to cart</a>
+        </p>
+        <div class="product-section">
+            <h3>Return and refund policy</h3>
+            <p>
+                I’m a Return and Refund policy.
+                I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase.
+                Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.
+            </p>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
