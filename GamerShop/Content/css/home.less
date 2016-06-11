@@ -246,7 +246,7 @@ header {
             text-align:center;
             position:relative;
             font-size:17px;
-            .transform-variant(translatey(-500px));
+            .transform-variant(translatey(-100px));
             .transition-variant(all .2s ease-in-out);
             padding:10px;
         }
@@ -278,7 +278,11 @@ header {
 
 // Shop
 #product-list-wrap {
-    margin: @size-nav 20px 25px; 
+    margin: @size-nav auto 25px;
+    padding: 15px 15px;
+    @media (min-width:918px) {
+         width: 90%;
+    }
 }
 
 .product-wrap {
@@ -290,6 +294,7 @@ header {
         height: 100%;
     }
     h1 {
+        width: 250px;
         margin: 15px 15px 0;
         font-size: 34px;
     }

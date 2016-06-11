@@ -239,11 +239,11 @@ header .header-content .header-content-inner p {
   text-align: center;
   position: relative;
   font-size: 17px;
-  -webkit-transform: translatey(-500px);
-  -moz-transform: translatey(-500px);
-  -ms-transform: translatey(-500px);
-  -o-transform: translatey(-500px);
-  transform: translatey(-500px);
+  -webkit-transform: translatey(-100px);
+  -moz-transform: translatey(-100px);
+  -ms-transform: translatey(-100px);
+  -o-transform: translatey(-100px);
+  transform: translatey(-100px);
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
@@ -276,7 +276,13 @@ header .header-content .header-content-inner p {
   margin: 0 !important;
 }
 #product-list-wrap {
-  margin: 60px 20px 25px;
+  margin: 60px auto 25px;
+  padding: 15px 15px;
+}
+@media (min-width: 918px) {
+  #product-list-wrap {
+    width: 90%;
+  }
 }
 .product-wrap {
   background-color: #ffffff;
@@ -288,6 +294,7 @@ header .header-content .header-content-inner p {
   height: 100%;
 }
 .product-wrap h1 {
+  width: 250px;
   margin: 15px 15px 0;
   font-size: 34px;
 }
