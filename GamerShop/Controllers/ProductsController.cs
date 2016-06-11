@@ -22,10 +22,10 @@ namespace GamerShop.Controllers
        // }
 
         // GET: Products
-        public ActionResult Index()
+        public ActionResult Index(string searchText = "")
         {
             ViewBag.noContainer = true;
-            return View(db.Products.ToList());
+            return View(db.Products.Where(s => s.Title.Contains(searchText)).ToList());
         }
 
         // GET: Products/Details/5

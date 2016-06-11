@@ -7,22 +7,18 @@
 <div id="product-list-wrap">
     <p>@Html.ActionLink("Create New", "Create")</p>
 
+    @using (Html.BeginForm("Index", "Products"))
+    {
+       
+         <div class="search-wrap">
+            <input type="text" name="searchText" placeholder="Search..."  class="search" required />
+            <input type="submit" value="Search" class="btn btn-primary btn-xl page-scroll" />
+        </div>
+  
+    }
 
     <div class="grid js-masonry"
          data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": 340 }'>
-
-        <div class="grid-item">
-            <div class="product-wrap">
-                <h1>Filter products</h1>
-                <p>
-                    Choose
-                </p>
-                <div class="product-details">
-                    @Html.ActionLink("Search", "Details", null, new { @class = "btn btn-product" })
-                </div>
-            </div>
-        </div>
-
         @foreach (var item in Model)
         {
             <div class="grid-item">

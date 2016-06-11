@@ -21,10 +21,19 @@
 }
 
 .background-cover() {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
-    -o-background-size: cover;
+}
+
+.box-sizing() {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.box-shadow(@attr) {
+    -moz-box-shadow: @attr;
+    -webkit-box-shadow: @attr;
+    box-shadow: @attr;
 }
 
 .button-variant(@color; @background; @border) {
