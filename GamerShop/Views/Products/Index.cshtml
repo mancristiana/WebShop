@@ -9,21 +9,22 @@
 
 
     <div class="grid js-masonry"
-         data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+         data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": 340 }'>
         @foreach (var item in Model)
         {
-
-
             <div class="grid-item">
                 <div class="product-wrap">
                     <img src="@Html.DisplayTextFor(modelItem => item.ImgUrl)" alt="">
-                    @Html.DisplayFor(modelItem => item.Title)
-                    <h2>@Html.DisplayNameFor(model => model.Price) @Html.DisplayFor(modelItem => item.Price)</h2>
-                    @Html.ActionLink("View Details", "Details", new { id = item.Id }, new { @class = "info" })
+                    <h1>@Html.DisplayFor(modelItem => item.Title)</h1>
+                    <h4>@Html.DisplayNameFor(model => model.Price) @Html.DisplayFor(modelItem => item.Price)</h4>
+                    <div class="product-details">
+                        @Html.ActionLink("View Details", "Details", new { id = item.Id }, new { @class = "btn btn-product" })
+                    </div>
+                    @*Html.ActionLink("Edit", "Edit", new { id = item.Id }) <text> | </text>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
                 </div>
             </div>
-            @*Html.ActionLink("Edit", "Edit", new { id = item.Id }) <text> | </text>
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+           
         }
     </div>
 

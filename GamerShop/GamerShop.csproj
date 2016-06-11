@@ -236,6 +236,10 @@
       <DependentUpon>home.css</DependentUpon>
     </Content>
     <Content Include="Content\Images\LoadingPanel\loader.gif" />
+    <Content Include="Content\img\featured\featured4.jpg" />
+    <Content Include="Content\img\featured\featured1.jpg" />
+    <Content Include="Content\img\featured\featured2.jpg" />
+    <Content Include="Content\img\featured\featured3.jpg" />
     <Content Include="Content\img\header.jpg" />
     <Content Include="Content\img\icons\Facebook.png" />
     <Content Include="Content\img\icons\Google.png" />
