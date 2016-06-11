@@ -6,9 +6,9 @@ namespace GamerShop
 {
     public partial class Startup
     {
-        public void Configuration(IAppBuilder app)
+        public void Configuration(IAppBuilder app) // Here OWIN middleware is registered
         {
-            ConfigureAuth(app);
+            ConfigureAuth(app); // Single component for authentication
         }
     }
 }

@@ -197,6 +197,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\JsSOABundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -234,13 +235,19 @@
     <Content Include="Content\css\home.min.css">
       <DependentUpon>home.css</DependentUpon>
     </Content>
+    <Content Include="Content\Images\LoadingPanel\loader.gif" />
     <Content Include="Content\img\header.jpg" />
+    <Content Include="Content\img\icons\Facebook.png" />
+    <Content Include="Content\img\icons\Google.png" />
     <Content Include="Content\img\products\1.jpg" />
     <Content Include="Content\img\products\2.jpg" />
     <Content Include="Content\img\products\3.jpg" />
     <Content Include="Content\img\products\4.jpg" />
     <Content Include="Content\img\products\5.jpg" />
     <Content Include="Content\img\products\6.jpg" />
+    <Content Include="Content\Sticky\jquery.sticky-1.0.0.css" />
+    <Content Include="Content\Sticky\jquery.sticky-1.0.0.min.css" />
+    <Content Include="Content\Sticky\stickyclose.png" />
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -273,9 +280,39 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jsSOA\engine-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\factory\jsLoader-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\factory\pubsub-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\factory\queue-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\factory\sequence-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\factory\serverRequest-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\factory\serviceMgr-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\browserCheck-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\cssContentLoader-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\debugConsole-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\googleAnalytics-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\htmlContentLoader-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\loadingPanel-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\log-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\notification-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\panelRotator-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\redirect-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\requestLoadingPanel-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\serverAuthentication-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\serverDeviceId-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\serverTransfer-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\service\webStorage-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\site\engine-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\site\service\cssCompatibilityBrowserCheck-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\site\service\googleAnalyticsAccount-1.0.0.js" />
+    <Content Include="Scripts\jsSOA\site\service\logUrl-1.0.0.js" />
+    <Content Include="Scripts\Masonry\jquery.masonry-2.1.05.js" />
+    <Content Include="Scripts\Masonry\jquery.masonry-2.1.05.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Sticky\jquery.sticky-1.0.0.js" />
+    <Content Include="Scripts\Sticky\jquery.sticky-1.0.0.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -284,38 +321,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Scripts\Views\Web.config" />
-    <Content Include="Scripts\Views\_ViewStart.cshtml" />
-    <Content Include="Scripts\Views\Shared\Error.cshtml" />
-    <Content Include="Scripts\Views\Shared\_Layout.cshtml" />
-    <Content Include="Scripts\Views\Home\About.cshtml" />
-    <Content Include="Scripts\Views\Home\Contact.cshtml" />
-    <Content Include="Scripts\Views\Home\Index.cshtml" />
-    <Content Include="Scripts\Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Scripts\Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Scripts\Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Scripts\Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Scripts\Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Scripts\Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Scripts\Views\Account\Login.cshtml" />
-    <Content Include="Scripts\Views\Account\Register.cshtml" />
-    <Content Include="Scripts\Views\Account\ResetPassword.cshtml" />
-    <Content Include="Scripts\Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Scripts\Views\Account\SendCode.cshtml" />
-    <Content Include="Scripts\Views\Account\VerifyCode.cshtml" />
-    <Content Include="Scripts\Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Scripts\Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Scripts\Views\Manage\Index.cshtml" />
-    <Content Include="Scripts\Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Scripts\Views\Manage\SetPassword.cshtml" />
-    <Content Include="Scripts\Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Scripts\Views\Shared\Lockout.cshtml" />
-    <Content Include="Scripts\Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Scripts\Views\Products\Create.cshtml" />
-    <Content Include="Scripts\Views\Products\Delete.cshtml" />
-    <Content Include="Scripts\Views\Products\Details.cshtml" />
-    <Content Include="Scripts\Views\Products\Edit.cshtml" />
-    <Content Include="Scripts\Views\Products\Index.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
@@ -348,10 +353,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\jsSOA\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\Views\Cart\" />
     <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>

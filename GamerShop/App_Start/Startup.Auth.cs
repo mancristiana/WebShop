@@ -15,6 +15,7 @@ namespace GamerShop
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
+            // Owin middleware for authentication
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
@@ -24,6 +25,7 @@ namespace GamerShop
             // Configure the sign in cookie
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
+                // Here we can instead set up 2 step authentication
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login"),
                 Provider = new CookieAuthenticationProvider
@@ -54,15 +56,15 @@ namespace GamerShop
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "987253241395926",
+               appSecret: "ad1b80a0605f7bc4c00ea765b3472656");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "690065396478-bkpe8aev5k8m2o0du82ea2tifsq46a1t.apps.googleusercontent.com",
+                ClientSecret = "B80RFcAvsIxqZjBh1ycFGTS2"
+            });
         }
     }
 }

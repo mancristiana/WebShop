@@ -23,6 +23,10 @@ namespace GamerShop
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+
+            bundles.Add(new ScriptBundle("~/bundles/masonry").Include(
+                      "~/Scripts/Masonry/jquery.masonry-2.1.05.min.js"));
+
             bundles.Add(new StyleBundle("~/bundles/css").Include(
                       "~/Content/css/bootstrap.css",
                       "~/Content/css/home.css",

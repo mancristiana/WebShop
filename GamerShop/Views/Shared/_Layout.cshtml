@@ -10,7 +10,7 @@
 
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' />
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' />
-
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
     @Scripts.Render("~/bundles/modernizr")
 
 
@@ -37,8 +37,8 @@
             </div>
         </div>
     </nav>
-
-    @{if (ViewBag.noContainer == null) 
+    @RenderSection("featured", false)
+    @{if (ViewBag.noContainer == null)
         {
             <section id="page-wrap">
                 @RenderBody()
@@ -71,8 +71,9 @@
         <p id="copy" class="text-center">&copy; @DateTime.Now.Year - ASP.NET GamerShop</p>
     </footer>
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", false)
+
 </body>
 </html>
