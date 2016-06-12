@@ -5,16 +5,19 @@
 }
 
 <div id="product-list-wrap">
-    <p>@Html.ActionLink("Create New", "Create")</p>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <p>@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-xl" })</p>
+    }
 
     @using (Html.BeginForm("Index", "Products"))
     {
-       
-         <div class="search-wrap">
-            <input type="text" name="searchText" placeholder="Search..."  class="search" required />
-            <input type="submit" value="Search" class="btn btn-primary btn-xl page-scroll" />
+
+        <div class="search-wrap">
+            <input type="text" name="searchText" placeholder="Search..." class="search" required />
+            <input type="submit" value="Search" class="btn btn-primary btn-xl" />
         </div>
-  
+
     }
 
     <div class="grid js-masonry"
@@ -29,11 +32,18 @@
                     <div class="product-details">
                         @Html.ActionLink("View Details", "Details", new { id = item.Id }, new { @class = "btn btn-product" })
                     </div>
-                    @*Html.ActionLink("Edit", "Edit", new { id = item.Id }) <text> | </text>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <div class="product-details">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-product" }) 
+                        </div>
+                        <div class="product-details">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-product" })
+                        </div>
+                    }
                 </div>
             </div>
-           
+
         }
     </div>
 

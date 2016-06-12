@@ -80,7 +80,7 @@ C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\bin\Microsoft.Owin.S
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.csprojResolveAssemblyReference.cache
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.dll
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.pdb
-C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.Migrations.AddProductMigration.resources
-C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.csproj.GenerateResource.Cache
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\bin\Ninject.dll
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\bin\Ninject.xml
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.Migrations.InitialMigrations.resources
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.csproj.GenerateResource.Cache

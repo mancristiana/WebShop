@@ -7,13 +7,13 @@ namespace GamerShop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddProductMigration : IMigrationMetadata
+    public sealed partial class InitialMigrations : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddProductMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigrations));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605031253279_AddProductMigration"; }
+            get { return "201606120957401_InitialMigrations"; }
         }
         
         string IMigrationMetadata.Source
