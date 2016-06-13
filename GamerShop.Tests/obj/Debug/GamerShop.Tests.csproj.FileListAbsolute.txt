@@ -57,3 +57,12 @@ C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Micr
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Microsoft.Owin.Security.Facebook.dll
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Microsoft.Owin.Security.Google.xml
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Microsoft.Owin.Security.Facebook.xml
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Castle.Core.dll
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Moq.dll
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\WebActivatorEx.dll
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Ninject.Web.Common.dll
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Ninject.dll
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Castle.Core.xml
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Moq.xml
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Ninject.Web.Common.xml
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Ninject.xml
