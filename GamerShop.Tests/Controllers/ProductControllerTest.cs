@@ -21,7 +21,51 @@ namespace GamerShop.Tests.Controllers
         //}
 
         [TestMethod]
-        public void Test_StudentsControllerCreate_CallsAddOrUpdate()
+        public void Test_ProductsController_Index_CallsFilterBy()
+        {
+            // Arrange
+            Mock<IProductRepository> mockProductRepo = new Mock<IProductRepository>();
+            ProductsController controller = new ProductsController(mockProductRepo.Object);
+            string queryString = "Biscuit";
+
+            // Act
+            controller.Index(queryString);
+
+            // Assert
+            mockProductRepo.Verify(mock => mock.FilterBy(queryString));
+        }
+
+        [TestMethod]
+        public void Test_ProductsController_Index_CallsFilterBy_withNoQueryString()
+        {
+            // Arrange
+            Mock<IProductRepository> mockProductRepo = new Mock<IProductRepository>();
+            ProductsController controller = new ProductsController(mockProductRepo.Object);
+
+            // Act
+            controller.Index();
+
+            // Assert
+            mockProductRepo.Verify(mock => mock.FilterBy(""));
+        }
+
+        [TestMethod]
+        public void Test_ProductsController_Details_CallsFind()
+        {
+            // Arrange
+            Mock<IProductRepository> mockProductRepo = new Mock<IProductRepository>();
+            ProductsController controller = new ProductsController(mockProductRepo.Object);
+            var id = 1;
+
+            // Act
+            controller.Details(id);
+
+            // Assert
+            mockProductRepo.Verify(mock => mock.Find(id));
+        }
+
+        [TestMethod]
+        public void Test_ProductsController_Create_CallsAddOrUpdate()
         {
             // Arrange
             Mock<IProductRepository> mockProductRepo = new Mock<IProductRepository>();
