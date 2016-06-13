@@ -11,9 +11,8 @@ namespace GamerShop.Repositories
     {
         List<Product> GetAll();
         Product Find(int id);
-        void Insert(Product product);
-        void Update(Product product);
-        void Delete(int id);
+        void AddOrUpdate(Product product);
+        void Delete(Product product);
         List<Product> FilterBy(string searchText);
 
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using GamerShop.Models;
+using System.Data.Entity;
 
 namespace GamerShop.Repositories
 {
@@ -10,35 +11,38 @@ namespace GamerShop.Repositories
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        public void Delete(int id)
+        public List<Product> GetAll()
         {
-
-            throw new NotImplementedException();
+            return db.Products.ToList();
         }
-
-        public List<Product> FilterBy(string searchText)
+        
+        public List<Product> FilterBy(string searchText = "")
         {
-            throw new NotImplementedException();
+            return db.Products.Where(s => s.Title.Contains(searchText)).ToList();
         }
 
         public Product Find(int id)
         {
-            throw new NotImplementedException();
+            return db.Products.Find(id);
         }
 
-        public List<Product> GetAll()
+        public void AddOrUpdate(Product product)
         {
-            throw new NotImplementedException();
+            if(product.Id == 0)
+            {
+                db.Products.Add(product);
+            } 
+            else
+            {
+                db.Entry(product).State = EntityState.Modified;
+            }
+            db.SaveChanges();
         }
 
-        public void Insert(Product product)
+        public void Delete(Product product)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Product product)
-        {
-            throw new NotImplementedException();
+            db.Products.Remove(product);
+            db.SaveChanges();
         }
     }
 }

@@ -13,19 +13,19 @@ namespace GamerShop.Controllers
 {
     public class ProductsController : Controller
     {
-        ApplicationDbContext db = new ApplicationDbContext();
-        private IProductRepository repo;
+        private IProductRepository repo = new ProductRepository();
 
         //public ProductsController(IProductRepository repo)
         //{
        //     this.repo = repo; 
        // }
 
+
         // GET: Products
         public ActionResult Index(string searchText = "")
         {
             ViewBag.noContainer = true;
-            return View(db.Products.Where(s => s.Title.Contains(searchText)).ToList());
+            return View(repo.FilterBy(searchText));
         }
 
         // GET: Products/Details/5
@@ -35,7 +35,7 @@ namespace GamerShop.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = repo.Find((int)id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -52,16 +52,13 @@ namespace GamerShop.Controllers
 
         [Authorize(Roles = "Admin")]
         // POST: Products/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Title,Description,ImgUrl,Price,StockCount")] Product product)
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(product);
-                db.SaveChanges();
+                repo.AddOrUpdate(product);
                 return RedirectToAction("Index");
             }
 
@@ -76,7 +73,7 @@ namespace GamerShop.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = repo.Find((int)id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -86,16 +83,13 @@ namespace GamerShop.Controllers
 
         [Authorize(Roles = "Admin")]
         // POST: Products/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Title,Description,ImgUrl,Price,StockCount")] Product product)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
+                repo.AddOrUpdate(product);
                 return RedirectToAction("Index");
             }
             return View(product);
@@ -109,7 +103,7 @@ namespace GamerShop.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = repo.Find((int)id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -123,19 +117,9 @@ namespace GamerShop.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.Products.Find(id);
-            db.Products.Remove(product);
-            db.SaveChanges();
+            Product product = repo.Find((int)id);
+            repo.Delete(product);
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

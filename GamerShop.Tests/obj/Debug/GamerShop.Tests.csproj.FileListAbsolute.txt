@@ -15,7 +15,6 @@ C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Game
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\GamerShop.Tests.dll
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\GamerShop.Tests.pdb
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\GamerShop.dll
-C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Newtonsoft.Json.dll
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\System.Web.Helpers.dll
@@ -54,3 +53,7 @@ C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Micr
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\obj\Debug\GamerShop.Tests.csprojResolveAssemblyReference.cache
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\obj\Debug\GamerShop.Tests.dll
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\obj\Debug\GamerShop.Tests.pdb
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Microsoft.Owin.Security.Google.xml
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop.Tests\bin\Debug\Microsoft.Owin.Security.Facebook.xml
