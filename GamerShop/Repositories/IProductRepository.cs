@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GamerShop.Repositories
 {
-    interface IProductRepository
+    public interface IProductRepository
     {
         List<Product> GetAll();
         Product Find(int id);

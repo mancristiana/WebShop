@@ -13,12 +13,12 @@ namespace GamerShop.Controllers
 {
     public class ProductsController : Controller
     {
-        private IProductRepository repo = new ProductRepository();
+        private IProductRepository repo;
 
-        //public ProductsController(IProductRepository repo)
-        //{
-       //     this.repo = repo; 
-       // }
+        public ProductsController(IProductRepository repo)
+        {
+            this.repo = repo;
+        }
 
 
         // GET: Products
