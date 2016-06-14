@@ -228,8 +228,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606141354391_cart.cs" />
+    <Compile Include="Migrations\201606141354391_cart.Designer.cs">
+      <DependentUpon>201606141354391_cart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606141405159_cart1.cs" />
+    <Compile Include="Migrations\201606141405159_cart1.Designer.cs">
+      <DependentUpon>201606141405159_cart1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606141407037_cart2.cs" />
+    <Compile Include="Migrations\201606141407037_cart2.Designer.cs">
+      <DependentUpon>201606141407037_cart2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606141412542_cartttt.cs" />
+    <Compile Include="Migrations\201606141412542_cartttt.Designer.cs">
+      <DependentUpon>201606141412542_cartttt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
@@ -372,20 +389,9 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Scripts\jsSOA\README.md" />
-    <Content Include="Views\CartItems\Create.cshtml" />
-    <Content Include="Views\CartItems\Delete.cshtml" />
-    <Content Include="Views\CartItems\Details.cshtml" />
-    <Content Include="Views\CartItems\Edit.cshtml" />
-    <Content Include="Views\CartItems\Index.cshtml" />
-    <Content Include="Views\Carts\Create.cshtml" />
-    <Content Include="Views\Carts\Delete.cshtml" />
-    <Content Include="Views\Carts\Details.cshtml" />
-    <Content Include="Views\Carts\Edit.cshtml" />
-    <Content Include="Views\Carts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
@@ -394,6 +400,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606141354391_cart.resx">
+      <DependentUpon>201606141354391_cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606141405159_cart1.resx">
+      <DependentUpon>201606141405159_cart1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606141407037_cart2.resx">
+      <DependentUpon>201606141407037_cart2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606141412542_cartttt.resx">
+      <DependentUpon>201606141412542_cartttt.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

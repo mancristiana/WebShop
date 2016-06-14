@@ -155,6 +155,11 @@ namespace GamerShop.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var db = new ApplicationDbContext();
+                    var cart = new Cart { isCurrent = true, ApplicationUserId = user.Id };
+                    db.Carts.Add(cart);
+                    db.SaveChanges();
+
                     UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, model.Name));
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
