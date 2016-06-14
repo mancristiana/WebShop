@@ -18,7 +18,12 @@ namespace GamerShop.Repositories
         
         public List<Product> FilterBy(string searchText = "")
         {
-            return db.Products.Where(s => s.Title.Contains(searchText)).ToList();
+            var products = from p in db.Products
+                           where p.Title.Contains(searchText)
+                           orderby p.Title
+                           select p;
+            return products.ToList();
+            //return db.Products.Where(s => s.Title.Contains(searchText)).ToList();
         }
 
         public Product Find(int id)
