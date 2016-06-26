@@ -222,27 +222,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606141354391_cart.cs" />
-    <Compile Include="Migrations\201606141354391_cart.Designer.cs">
-      <DependentUpon>201606141354391_cart.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606141405159_cart1.cs" />
-    <Compile Include="Migrations\201606141405159_cart1.Designer.cs">
-      <DependentUpon>201606141405159_cart1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606141407037_cart2.cs" />
-    <Compile Include="Migrations\201606141407037_cart2.Designer.cs">
-      <DependentUpon>201606141407037_cart2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606141412542_cartttt.cs" />
-    <Compile Include="Migrations\201606141412542_cartttt.Designer.cs">
-      <DependentUpon>201606141412542_cartttt.cs</DependentUpon>
+    <Compile Include="Migrations\201606211044458_init.cs" />
+    <Compile Include="Migrations\201606211044458_init.Designer.cs">
+      <DependentUpon>201606211044458_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -389,6 +378,11 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Scripts\jsSOA\README.md" />
+    <Content Include="Views\Carts\Create.cshtml" />
+    <Content Include="Views\Carts\Delete.cshtml" />
+    <Content Include="Views\Carts\Details.cshtml" />
+    <Content Include="Views\Carts\Edit.cshtml" />
+    <Content Include="Views\Carts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -402,17 +396,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606141354391_cart.resx">
-      <DependentUpon>201606141354391_cart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606141405159_cart1.resx">
-      <DependentUpon>201606141405159_cart1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606141407037_cart2.resx">
-      <DependentUpon>201606141407037_cart2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606141412542_cartttt.resx">
-      <DependentUpon>201606141412542_cartttt.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606211044458_init.resx">
+      <DependentUpon>201606211044458_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -91,8 +91,5 @@ C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\bin\Castle.Core.xml
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\bin\Moq.xml
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\bin\Ninject.Web.Common.xml
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\bin\Ninject.Web.Mvc.xml
-C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.Migrations.cart.resources
+C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.Migrations.init.resources
 C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.csproj.GenerateResource.Cache
-C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.Migrations.cart1.resources
-C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.Migrations.cart2.resources
-C:\Users\mancr\Documents\KEAProjets\MVC\GamerShop\GamerShop\obj\Debug\GamerShop.Migrations.cartttt.resources

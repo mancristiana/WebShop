@@ -17,6 +17,8 @@ namespace GamerShop.Migrations
 
         protected override void Seed(GamerShop.Models.ApplicationDbContext context)
         {
+            //  This method will be called after migrating to the latest version.
+
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(userStore);
 
@@ -49,7 +51,17 @@ namespace GamerShop.Migrations
                 new Product { Id = 15, Title = "Custom Chocolate Bites", Description = "These various shaped delicious chocolates are carefully created with great attention to detail! The decorations can be customized! Contact Cookie Monster for special orders! Meanwhile feel free to order the default awesome package of Chocolate Bites! The package contains 30 pieces amounting to 200 grams. Warning! Very Addictive! Take this deliciousness right to your home! Order now!", ImgUrl = "/Content/img/products/15.jpg", Price = 50, StockCount = 124 }
                 );
 
-          
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data. E.g.
+            //
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
         }
     }
 }

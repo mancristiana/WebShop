@@ -13,6 +13,7 @@ namespace GamerShop.Models
         public bool isCurrent { get; set; }
 
         public virtual ApplicationUser User { get; set; }
+        [Required]
         public string ApplicationUserId { get; set; }
     }
 }

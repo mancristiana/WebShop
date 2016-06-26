@@ -156,11 +156,14 @@ namespace GamerShop.Controllers
                 if (result.Succeeded)
                 {
                     var db = new ApplicationDbContext();
+
+                    // Assign a new cart to the user if the registration succeeds
                     var cart = new Cart { isCurrent = true, ApplicationUserId = user.Id };
                     db.Carts.Add(cart);
                     db.SaveChanges();
 
                     UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, model.Name));
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
