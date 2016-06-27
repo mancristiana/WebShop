@@ -17,8 +17,7 @@ namespace GamerShop.Models
         public virtual Product Product { get; set; }
         [Required]
         public string ProductId { get; set; }
-
-        public virtual Cart Cart { get; set; }
+        
         [Required]
         public int CartId { get; set; }
     }

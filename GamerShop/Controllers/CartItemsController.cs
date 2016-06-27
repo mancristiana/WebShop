@@ -15,9 +15,11 @@ namespace GamerShop.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: CartItems
-        public ActionResult Index()
+        public ActionResult Index(Cart cart)
         {
-            var cartItems = db.CartItems.Include(c => c.Cart);
+            var cartItems = from c in db.CartItems
+                            where c.CartId.Equals(cart.Id)
+                            select c;
             return View(cartItems.ToList());
         }
 
