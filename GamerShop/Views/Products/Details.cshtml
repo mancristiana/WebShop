@@ -20,8 +20,9 @@
             <strong>Left in stock: </strong> @Html.DisplayFor(model => model.StockCount)
             <br />
 
-            <input type="number" class="quantity text-center" value="1" min="1" max="@Html.DisplayTextFor(model => model.StockCount)" />
-            <a href="#" class="btn btn-primary btn-xl page-scroll">Add to cart</a>
+            <input type="number" name="quantity" class="quantity text-center" value="1" min="1" max="@Html.DisplayTextFor(model => model.StockCount)" />
+            @Html.ActionLink("Add To Cart", "AddToCart", "CartItems", new { productId = Model.Id }, new { @class = "btn btn-primary btn-xl page-scroll" })
+
         </p>
         <div class="product-section">
             <h3>Return and refund policy</h3>

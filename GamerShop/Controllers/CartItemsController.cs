@@ -14,11 +14,22 @@ namespace GamerShop.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: CartItems
         public ActionResult Index()
         {
-            var cartItems = db.CartItems.Include(c => c.Product);
+            var cartItems = from c in db.CartItems
+                            where c.CartId.Equals(1)
+                            select c;
+            //var cartItems = db.CartItems.Include(c => c.Product);
             return View(cartItems.ToList());
+        }
+
+        public ActionResult AddToCart(int productId)
+        {
+            var p = db.Products.Find(productId);
+            var cartItem = new CartItem { CartId = 1, Product = p, ProductId = productId, Quantity = 1};
+            db.CartItems.Add(cartItem);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // GET: CartItems/Details/5
