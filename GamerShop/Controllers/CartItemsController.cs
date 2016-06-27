@@ -11,6 +11,7 @@ using GamerShop.Repositories;
 
 namespace GamerShop.Controllers
 {
+    [Authorize]
     public class CartItemsController : Controller
     {
         //private ApplicationDbContext db = new ApplicationDbContext();
