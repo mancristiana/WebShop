@@ -7,30 +7,30 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GamerShop.Models;
+using GamerShop.Repositories;
 
 namespace GamerShop.Controllers
 {
     public class CartItemsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        //private ApplicationDbContext db = new ApplicationDbContext();
+        private ICartItemRepository repo;
+
+        public CartItemsController(ICartItemRepository repo)
+        {
+            this.repo = repo;
+        }
+
 
         public ActionResult Index()
         {
-            var cartItems = from c in db.CartItems
-                            where c.CartId.Equals(1)
-                            select c;
-           
-            //var cartItems = db.CartItems.Include(c => c.Product);
-            return View(cartItems.ToList());
+            return View(repo.GetAll());
         }
 
         [HttpPost]
         public ActionResult AddToCart(int productId)
         {
-            var p = db.Products.Find(productId);
-            var cartItem = new CartItem { CartId = 1, Product = p, ProductId = productId, Quantity = 1};
-            db.CartItems.Add(cartItem);
-            db.SaveChanges();
+            repo.AddToCart(productId, 1);
             return RedirectToAction("Index");
         }
 
@@ -41,36 +41,11 @@ namespace GamerShop.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CartItem cartItem = db.CartItems.Find(id);
+            CartItem cartItem = repo.Find((int)id);
             if (cartItem == null)
             {
                 return HttpNotFound();
             }
-            return View(cartItem);
-        }
-
-        // GET: CartItems/Create
-        public ActionResult Create()
-        {
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "Title");
-            return View();
-        }
-
-        // POST: CartItems/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Quantity,ProductId,CartId")] CartItem cartItem)
-        {
-            if (ModelState.IsValid)
-            {
-                db.CartItems.Add(cartItem);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "Title", cartItem.ProductId);
             return View(cartItem);
         }
 
@@ -81,29 +56,26 @@ namespace GamerShop.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CartItem cartItem = db.CartItems.Find(id);
+            CartItem cartItem = repo.Find((int)id);
             if (cartItem == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "Title", cartItem.ProductId);
+            ViewBag.ProductId = repo.GetSelectList(cartItem);
             return View(cartItem);
         }
 
         // POST: CartItems/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Quantity,ProductId,CartId")] CartItem cartItem)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cartItem).State = EntityState.Modified;
-                db.SaveChanges();
+                repo.AddOrUpdate(cartItem);
                 return RedirectToAction("Index");
             }
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "Title", cartItem.ProductId);
+            ViewBag.ProductId = repo.GetSelectList(cartItem);
             return View(cartItem);
         }
 
@@ -114,7 +86,7 @@ namespace GamerShop.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CartItem cartItem = db.CartItems.Find(id);
+            CartItem cartItem = repo.Find((int)id);
             if (cartItem == null)
             {
                 return HttpNotFound();
@@ -127,19 +99,10 @@ namespace GamerShop.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            CartItem cartItem = db.CartItems.Find(id);
-            db.CartItems.Remove(cartItem);
-            db.SaveChanges();
+            CartItem cartItem = repo.Find((int)id);
+            repo.Delete(cartItem);           
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
     }
 }
