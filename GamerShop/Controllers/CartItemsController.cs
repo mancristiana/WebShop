@@ -15,10 +15,10 @@ namespace GamerShop.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: CartItems
-        public ActionResult Index(Cart cart)
+        public ActionResult Index()
         {
             var cartItems = from c in db.CartItems
-                            where c.CartId.Equals(cart.Id)
+                            where c.CartId.Equals(1)
                             select c;
             return View(cartItems.ToList());
         }
@@ -41,7 +41,6 @@ namespace GamerShop.Controllers
         // GET: CartItems/Create
         public ActionResult Create()
         {
-            ViewBag.CartId = new SelectList(db.Carts, "Id", "ApplicationUserId");
             return View();
         }
 
@@ -59,7 +58,6 @@ namespace GamerShop.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CartId = new SelectList(db.Carts, "Id", "ApplicationUserId", cartItem.CartId);
             return View(cartItem);
         }
 
@@ -75,7 +73,6 @@ namespace GamerShop.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CartId = new SelectList(db.Carts, "Id", "ApplicationUserId", cartItem.CartId);
             return View(cartItem);
         }
 
@@ -92,7 +89,6 @@ namespace GamerShop.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CartId = new SelectList(db.Carts, "Id", "ApplicationUserId", cartItem.CartId);
             return View(cartItem);
         }
 
