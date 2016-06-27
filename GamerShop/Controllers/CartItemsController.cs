@@ -19,10 +19,12 @@ namespace GamerShop.Controllers
             var cartItems = from c in db.CartItems
                             where c.CartId.Equals(1)
                             select c;
+           
             //var cartItems = db.CartItems.Include(c => c.Product);
             return View(cartItems.ToList());
         }
 
+        [HttpPost]
         public ActionResult AddToCart(int productId)
         {
             var p = db.Products.Find(productId);

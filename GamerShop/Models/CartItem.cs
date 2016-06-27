@@ -20,5 +20,15 @@ namespace GamerShop.Models
         
         [Required]
         public int CartId { get; set; }
+
+        //[Range(0, 99999)]
+        //[DataType(DataType.Currency)]
+        //public decimal PriceTimesQuantity {
+        //    get
+        //    {
+        //        return Product.Price * Quantity; 
+        //    }
+        //}
+
     }
 }

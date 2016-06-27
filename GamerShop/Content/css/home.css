@@ -12,7 +12,8 @@ hr {
 hr .light {
   border-color: #eee;
 }
-a {
+a,
+button {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -21,7 +22,9 @@ a {
   color: #d15b7f;
 }
 a:hover,
-a:focus {
+button:hover,
+a:focus,
+button:focus {
   color: #c33661;
 }
 h1,

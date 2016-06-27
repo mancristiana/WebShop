@@ -19,9 +19,15 @@
         <p>
             <strong>Left in stock: </strong> @Html.DisplayFor(model => model.StockCount)
             <br />
-
-            <input type="number" name="quantity" class="quantity text-center" value="1" min="1" max="@Html.DisplayTextFor(model => model.StockCount)" />
-            @Html.ActionLink("Add To Cart", "AddToCart", "CartItems", new { productId = Model.Id }, new { @class = "btn btn-primary btn-xl page-scroll" })
+            @using (Html.BeginForm("AddToCart", "CartItems", new { productId = Model.Id }, FormMethod.Post))
+            {
+                <input type="number" name="quantity" class="quantity text-center" value="1" min="1" max="@Html.DisplayTextFor(model => model.StockCount)" />
+               //@Html.ActionLink("Add To Cart", "AddToCart", "CartItems", new { productId = Model.Id }, new { @class = "btn btn-primary btn-xl page-scroll" })
+                <button class="btn btn-primary btn-x1 page-scroll" type="submit">
+                    Add To Cart
+                </button>
+            
+            }
 
         </p>
         <div class="product-section">
