@@ -17,9 +17,7 @@ namespace GamerShop.Controllers
         // GET: CartItems
         public ActionResult Index()
         {
-            var cartItems = from c in db.CartItems
-                            where c.CartId.Equals(1)
-                            select c;
+            var cartItems = db.CartItems.Include(c => c.Product);
             return View(cartItems.ToList());
         }
 
@@ -41,6 +39,7 @@ namespace GamerShop.Controllers
         // GET: CartItems/Create
         public ActionResult Create()
         {
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "Title");
             return View();
         }
 
@@ -58,6 +57,7 @@ namespace GamerShop.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "Title", cartItem.ProductId);
             return View(cartItem);
         }
 
@@ -73,6 +73,7 @@ namespace GamerShop.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "Title", cartItem.ProductId);
             return View(cartItem);
         }
 
@@ -89,6 +90,7 @@ namespace GamerShop.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "Title", cartItem.ProductId);
             return View(cartItem);
         }
 
