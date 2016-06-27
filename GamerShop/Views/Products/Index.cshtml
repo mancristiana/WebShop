@@ -15,7 +15,9 @@
 
         <div class="search-wrap">
             <input type="text" name="searchText" placeholder="Search..." class="search" required />
-            <input type="submit" value="Search" class="btn btn-primary btn-xl" />
+            <button class="btn btn-primary btn-x1" type="submit">
+                <i class="fa fa-search fa-3x"></i>
+            </button>
         </div>
 
     }
@@ -35,7 +37,7 @@
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {
                         <div class="product-details">
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-product" }) 
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-product" })
                         </div>
                         <div class="product-details">
                             @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-product" })
